@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Menu.Views.MainPage" xmlns:local="clr-namespace:Menu.ViewModels">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Appetizers"/>
+
+            <CollectionView Grid.Row="1" Grid.ColumnSpan="5">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame>
+                                <Label Text="{Binding .}"/>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <Button Grid.Column="0" Grid.Row="0" Text="Appetizers" Command="{Binding AppetizersButton}"/>
+
+            <Button Grid.Column="1" Grid.Row="0" Text="Donburi" Command="{Binding DonburiButton}"/>
+
+            <Button Grid.Column="2" Grid.Row="0" Text="Drinks" Command="{Binding DrinksButton}"/>
+
+            <Button Grid.Column="3" Grid.Row="0" Text="Desserts" Command="{Binding DessertsButton}"/>
+
+            <Button Grid.Column="4" Grid.Row="0" Text="Ramen" Command="{Binding RamenButton}"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
